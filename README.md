@@ -12,4 +12,4 @@ The images of my friend are awful.
 
 The strings of things my friend has said are also awful (and some are inside jokes).
 
-I hope he likes it!
+I hope they like it!
