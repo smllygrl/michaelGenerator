@@ -6,7 +6,7 @@ Naturally, I am hand making a meme generator.
 
 On click, a new image and string will generate on the page.
 
-I will build two functions which generate two different numbers, which either correlate to the name of the static image, or the key of my string object.
+I will build functions which generate two different numbers, which either correlate to the name of the static image, or the key of my string object.
 
 The images of my friend are awful.
 
