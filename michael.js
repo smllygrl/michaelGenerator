@@ -4,30 +4,22 @@ const michStrings = {
   3: " * has a conscussion * ",
   4: " * sets entire arm on fire * ",
   5: "Steiner is so cool I am exci... it's a cult",
-  6: "I am not a cult leader but...",
-  7: "oh heck",
-  8: "It's a message ~ ~",
-  9: "Yeah yeah I smooched Shelley's Mum...",
-  10: "This is the 10th item in the object",
+  6: "I am not a cult leader",
+  7: "heck",
+  8: "I won the limbo competition at Year 7 camp",
+  9: "I smooched Kerryn",
+  10: "I will survive, I will survive, I will survive",
 };
 
 let imageNum = 0;
 let stringNum = 0;
 
-// Declare button
-const genButt = document.getElementsByTagName("button");
-
 // Decalre output area
-const genString = document.getElementById("genString");
-// const genImage = (document.getElementById("genImage").src =
-//   "michImages/" + imageNum + ".jpg");
+const stringOutput = document.getElementById("genString").innerText;
 
 const genNums = () => {
-  console.log("Button clicked");
   return randomStringNum(1, 10), randomImageNum(1, 18);
 };
-
-// // Event listener
 
 // Random number generator
 // String max = 10
@@ -37,6 +29,17 @@ const randomStringNum = (min, max) => {
   console.log(`The new stringNum: ${stringNum}`);
   return stringNum;
 };
+
+const getString = (stringNum) => {
+  let funString = michStrings[stringNum];
+  return funString;
+};
+
+const setString = (funString, stringOutput) => {
+  let stringOutput = funString;
+  return stringOutput;
+};
+
 // Image max = 18
 const randomImageNum = (min, max) => {
   console.log("Random image number beginning");
@@ -44,3 +47,14 @@ const randomImageNum = (min, max) => {
   console.log(`The new imageNum: ${imageNum}`);
   return imageNum;
 };
+
+const getImage = (imageNum) => {
+  let image = (document.getElementById("genImage").src =
+    "michImages/" + imageNum + ".jpg");
+  return image;
+};
+
+// Declare button
+const genButt = document.getElementById("generator");
+
+genButt.addEventListener("click", console.log("Button pressed"));
