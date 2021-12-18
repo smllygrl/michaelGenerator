@@ -34,29 +34,20 @@ const michImages = [
 
 let randomNum = 0;
 
-// Random number generator
-// String max = 10 // Image max = 18
 const genRandomNum = (min, max) => {
-  console.log("Random number beginning");
   let randomNum = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(`The new randomNum: ${randomNum}`);
   return randomNum;
 };
 
-// // Declare button
-// const genButt = document.getElementById("generator");
-
 const clickEvent = (c) => {
-  console.log("Click event");
-
+  // String
   let stringNum = genRandomNum(1, 10);
+  console.log(`stringNum: ${stringNum}`);
   let funString = michStrings[stringNum];
-  console.log(funString);
   document.getElementById("genString").innerText = funString;
-
-  // 0 is min now bc we are getting from an arr
-  let imageNum = genRandomNum(0, 18);
+  // Image
+  let imageNum = genRandomNum(1, 18) - 1;
+  console.log(`imageNum: ${imageNum}`);
   document.getElementById("genImage").src = michImages[imageNum];
-
-  return funString;
+  return c;
 };
