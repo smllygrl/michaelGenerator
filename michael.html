@@ -5,20 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="michael.js"></script>
+    <link rel="stylesheet" href="michael.css" />
     <title>its chrambus mikey</title>
   </head>
-  <body>
-    <h1>i am sorry</h1>
-
-    <button id="generator" class="generator">generate.. if u dare..</button>
-
+  <body class="body">
     <div class="body__box">
-      <div class="body__imageDiv">
-        <img id="genImage" src="" />
-      </div>
+      <h1 class="body__heading">i am sorry</h1>
+      <button class="body__button" onclick="clickEvent()">press it</button>
 
-      <div class="body__stringDiv">
-        <p id="genString"></p>
+      <div class="body__genBox">
+        <div class="body__imageDiv">
+          <img class="body__image" id="genImage" src="" />
+        </div>
+
+        <div class="body__stringDiv">
+          <p class="body__string" id="genString"></p>
+        </div>
       </div>
     </div>
   </body>

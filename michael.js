@@ -11,50 +11,52 @@ const michStrings = {
   10: "I will survive, I will survive, I will survive",
 };
 
-let imageNum = 0;
-let stringNum = 0;
+const michImages = [
+  "michImages/1.jpg",
+  "michImages/2.jpg",
+  "michImages/3.jpg",
+  "michImages/4.jpg",
+  "michImages/5.jpg",
+  "michImages/6.jpg",
+  "michImages/7.jpg",
+  "michImages/8.jpg",
+  "michImages/9.jpg",
+  "michImages/10.jpg",
+  "michImages/11.jpg",
+  "michImages/12.jpg",
+  "michImages/13.jpg",
+  "michImages/14.jpg",
+  "michImages/15.jpg",
+  "michImages/16.jpg",
+  "michImages/17.jpg",
+  "michImages/18.jpg",
+];
 
-// Decalre output area
-const stringOutput = document.getElementById("genString").innerText;
-
-const genNums = () => {
-  return randomStringNum(1, 10), randomImageNum(1, 18);
-};
+let randomNum = 0;
 
 // Random number generator
-// String max = 10
-const randomStringNum = (min, max) => {
-  console.log("Random string number beginning");
-  let stringNum = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(`The new stringNum: ${stringNum}`);
-  return stringNum;
+// String max = 10 // Image max = 18
+const genRandomNum = (min, max) => {
+  console.log("Random number beginning");
+  let randomNum = Math.floor(Math.random() * (max - min + 1) + min);
+  console.log(`The new randomNum: ${randomNum}`);
+  return randomNum;
 };
 
-const getString = (stringNum) => {
+// // Declare button
+// const genButt = document.getElementById("generator");
+
+const clickEvent = (c) => {
+  console.log("Click event");
+
+  let stringNum = genRandomNum(1, 10);
   let funString = michStrings[stringNum];
+  console.log(funString);
+  document.getElementById("genString").innerText = funString;
+
+  // 0 is min now bc we are getting from an arr
+  let imageNum = genRandomNum(0, 18);
+  document.getElementById("genImage").src = michImages[imageNum];
+
   return funString;
 };
-
-const setString = (funString, stringOutput) => {
-  let stringOutput = funString;
-  return stringOutput;
-};
-
-// Image max = 18
-const randomImageNum = (min, max) => {
-  console.log("Random image number beginning");
-  let imageNum = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(`The new imageNum: ${imageNum}`);
-  return imageNum;
-};
-
-const getImage = (imageNum) => {
-  let image = (document.getElementById("genImage").src =
-    "michImages/" + imageNum + ".jpg");
-  return image;
-};
-
-// Declare button
-const genButt = document.getElementById("generator");
-
-genButt.addEventListener("click", console.log("Button pressed"));
