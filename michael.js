@@ -4,43 +4,50 @@ const michStrings = {
   3: " * has a conscussion * ",
   4: " * sets entire arm on fire * ",
   5: "Steiner is so cool I am exci... it's a cult",
-  6: "I am not a cult leader but...",
-  7: "oh heck",
-  8: "It's a message ~ ~",
-  9: "Yeah yeah I smooched Shelley's Mum...",
-  10: "This is the 10th item in the object",
+  6: "I am not a cult leader",
+  7: "heck",
+  8: "I won the limbo competition at Year 7 camp",
+  9: "I smooched Kerryn",
+  10: "I will survive, I will survive, I will survive",
 };
 
-let imageNum = 0;
-let stringNum = 0;
+const michImages = [
+  "michImages/1.jpg",
+  "michImages/2.jpg",
+  "michImages/3.jpg",
+  "michImages/4.jpg",
+  "michImages/5.jpg",
+  "michImages/6.jpg",
+  "michImages/7.jpg",
+  "michImages/8.jpg",
+  "michImages/9.jpg",
+  "michImages/10.jpg",
+  "michImages/11.jpg",
+  "michImages/12.jpg",
+  "michImages/13.jpg",
+  "michImages/14.jpg",
+  "michImages/15.jpg",
+  "michImages/16.jpg",
+  "michImages/17.jpg",
+  "michImages/18.jpg",
+];
 
-// Declare button
-const genButt = document.getElementsByTagName("button");
+let randomNum = 0;
 
-// Decalre output area
-const genString = document.getElementById("genString");
-// const genImage = (document.getElementById("genImage").src =
-//   "michImages/" + imageNum + ".jpg");
-
-const genNums = () => {
-  console.log("Button clicked");
-  return randomStringNum(1, 10), randomImageNum(1, 18);
+const genRandomNum = (min, max) => {
+  let randomNum = Math.floor(Math.random() * (max - min + 1) + min);
+  return randomNum;
 };
 
-// // Event listener
-
-// Random number generator
-// String max = 10
-const randomStringNum = (min, max) => {
-  console.log("Random string number beginning");
-  let stringNum = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(`The new stringNum: ${stringNum}`);
-  return stringNum;
-};
-// Image max = 18
-const randomImageNum = (min, max) => {
-  console.log("Random image number beginning");
-  let imageNum = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(`The new imageNum: ${imageNum}`);
-  return imageNum;
+const clickEvent = (c) => {
+  // String
+  let stringNum = genRandomNum(1, 10);
+  console.log(`stringNum: ${stringNum}`);
+  let funString = michStrings[stringNum];
+  document.getElementById("genString").innerText = funString;
+  // Image
+  let imageNum = genRandomNum(1, 18) - 1;
+  console.log(`imageNum: ${imageNum}`);
+  document.getElementById("genImage").src = michImages[imageNum];
+  return c;
 };
